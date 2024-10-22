@@ -86,9 +86,19 @@ input{
     font-size: 1.5rem;
 }
 
-/* Styles for Large Screen */
-@media (min-width: 993px) {
-   
+/* currency info  */
+.currency-info{
+    margin: 1em 0;
+}
+
+/* exchange button */
+.btn{
+    width: 100%;
+    padding: 1em;
+    border-radius: 0.4em;
+    background-color: #640D5F;
+    color:white;
+    text-align: center;
 }
 
 /* Styles for Medium Screen */

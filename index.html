@@ -6,64 +6,56 @@
     <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js" defer></script>
+    <script type="module" src="script.js" defer></script>
 </head>
-    <div class="container">
-       <div class="converter-container">
-        <!-- the header -->
-        <h2>Currency Converter</h2>
-        <!-- section 2: The amount input box -->
-        <div class="amount-container">
-            <p>Enter Amount</p>
-            <input type="text" placeholder="Please enter your amount">
-        </div>
-        <!-- section 3: Two countries dropdown -->
-        <div class="countries-dropdown">
-            <!-- Country 1-->
-            <div class="from-dropdown item">
-                <p class="title">From</p>
-                 <!-- Country 1 dropdown -->
-                <div class="country1 dropdown-container">
-                <img src="https://flagsapi.com/US/flat/64.png" class="flag flag1">
-                <select name="from-dropdown" class="from-dropdown dropdown">
-                    <option value="US">USD</option>
-                    <option value="AR">ARS</option>
-                    <option value="AU">AUD</option>
-                    <option value="AG">AQD</option>
-                    <option value="BR">BRL</option>
-                </select>
+        <div class="container">
+        <div class="converter-container">
+            <!-- the header -->
+            <h2>Currency Converter</h2>
+            <!-- section 2: The amount input box -->
+            <div class="amount-container">
+                <p>Enter Amount</p>
+                <input type="text" placeholder="Please enter your amount">
+            </div>
+            <!-- section 3: Two countries dropdown -->
+            <div class="countries-dropdown">
+                <!-- Country 1-->
+                <div class="item">
+                    <p class="title">From</p>
+                    <!-- Country 1 dropdown -->
+                    <div class="country1 dropdown-container">
+                    <img src="https://flagsapi.com/US/flat/64.png" class="flag flag1">
+                    <select name="from-dropdown" class="from-dropdown dropdown">
+                        <option value="US">USD</option>
+                    </select>
+                    </div>
+                </div>
+                <!-- exchange icon -->
+                <div class="exchange ">
+                    <i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i>
+                </div>
+                <!-- Country 2-->
+                <div class="item">
+                    <p class="title">To</p>
+                    <!-- Country 2 dropdown -->
+                    <div class="country1 dropdown-container">
+                    <img src="https://flagsapi.com/AR/flat/64.png" class="flag flag1">
+                    <select name="from-dropdown" class="to-dropdown dropdown">
+                        <option value="AR">ARS</option>
+                    </select>
+                    </div>
+                </div>
+                </div>
+                <!-- Converstion information -->
+                <p class="currency-info">1 USD = 983.24 ARS</p>
+                <!-- Exchange Button -->
+                <div class="btn">
+                    <p>Get Exchange Rate</p>
                 </div>
             </div>
-            <!-- exchange icon -->
-            <div class="exchange ">
-                <i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i>
-            </div>
-            <!-- Country 2-->
-            <div class="to-dropdown item">
-                <p class="title">To</p>
-                 <!-- Country 2 dropdown -->
-                <div class="country1 dropdown-container">
-                <img src="https://flagsapi.com/AR/flat/64.png" class="flag flag1">
-                <select name="from-dropdown" class="from-dropdown dropdown">
-                    <option value="AR">ARS</option>
-                    <option value="AU">AUD</option>
-                    <option value="AG">AQD</option>
-                    <option value="BR">BRL</option>
-                    <option value="US">USD</option>
-                </select>
                 </div>
             </div>
-            </div>
-            <!-- Converstion information -->
-            <p>1 USD = 983.24 ARS</p>
-            <!-- Exchange Button -->
-            <div class="button">
-                <p>Get Exchange Rate</p>
-             </div>
-       </div>
-            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
 
