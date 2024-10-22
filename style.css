@@ -41,27 +41,18 @@ input{
 
 .countries-dropdown{
     display: flex;
-    justify-content: space-around;
-    /* align-items: center; */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.item{
+    width:30%;
 }
 
 /* for the country box */
 .title{
     margin-bottom: 0;
-}
-
-.flag{
-    width: 40%;
-}
-
-.dropdown-container{
-    width: 80%;
-    padding: 0.5em;
-    border-radius: 0.3em;
-    border: 1.5px solid rgba(171, 167, 167, 0.909);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .dropdown{
@@ -70,12 +61,25 @@ input{
     background: transparent;
 }
 
+.dropdown-container{
+    width:100%; 
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border: 1.5px solid rgba(171, 167, 167, 0.909);
+}
+
+.flag{
+    width: 40%;
+}
+
 /* exchange incon */
 .exchange{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50% ;
+    width:15%;
 }
 
 .exchange-icon{
