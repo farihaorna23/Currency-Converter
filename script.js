@@ -4,10 +4,12 @@ let fromDropdown = document.querySelector(".from-dropdown");
 let toDropdown = document.querySelector(".to-dropdown");
 let flag1img = document.querySelector(".flag1")
 let flag2img = document.querySelector(".flag2")
+let currencyInfo = document.querySelector(".currency-info")
 
 //variables
 let currency1 = ""
 let currency2  = ""
+
 //creating the dropdown options for the From and To dropdown from countryList object
 for(let currency in countryList){
     let fromOption = document.createElement('option')
@@ -27,10 +29,14 @@ const fetchCurrency = async(currency) => {
     return data
 }
 
+//will update the currency information on the convereter container screen
 const messageBoard = async() => {
     if (currency1 && currency2){
        let data = await fetchCurrency(currency1)
-       console.log(data)
+       let lowerCurr1 = currency1.toLowerCase()
+       let lowerCurr2 = currency2.toLowerCase()
+       let rate = data[lowerCurr1][lowerCurr2]
+       currencyInfo.textContent = `1 ${currency1} = ${rate} ${currency2}`
     }
 }
 
@@ -44,7 +50,7 @@ const fromDropdownHandler = (e) => {
     flag1img.src = `https://flagsapi.com/${country}/flat/64.png`
 }
 
-
+//event handler for to dropdown
 const toDropdownHandler = (e) => {
     //get the currency
     currency2  = e.target.value;
