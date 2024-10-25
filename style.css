@@ -89,6 +89,7 @@ input{
 /* currency info  */
 .currency-info{
     margin: 1em 0;
+    font-weight: bolder;
 }
 
 /* exchange button */

@@ -1,14 +1,18 @@
 //importing countryList from another file
 import {countryList} from "./countries.js";
+
 let fromDropdown = document.querySelector(".from-dropdown");
 let toDropdown = document.querySelector(".to-dropdown");
 let flag1img = document.querySelector(".flag1")
 let flag2img = document.querySelector(".flag2")
 let currencyInfo = document.querySelector(".currency-info")
+let userInput = document.querySelector(".user-input")
+let button = document.querySelector(".btn")
 
 //variables
-let currency1 = ""
-let currency2  = ""
+let currency1 = "USD"
+let currency2  = "AED"
+let currencyInput = 0
 
 //creating the dropdown options for the From and To dropdown from countryList object
 for(let currency in countryList){
@@ -29,14 +33,24 @@ const fetchCurrency = async(currency) => {
     return data
 }
 
+//will get the rate from api
+const getRate = async() => {
+    if (currency1 && currency2){
+        let data = await fetchCurrency(currency1)
+        let lowerCurr1 = currency1.toLowerCase()
+        let lowerCurr2 = currency2.toLowerCase()
+        let rate = data[lowerCurr1][lowerCurr2]
+        return rate
+    }
+    return null
+}
+
 //will update the currency information on the convereter container screen
 const messageBoard = async() => {
     if (currency1 && currency2){
-       let data = await fetchCurrency(currency1)
-       let lowerCurr1 = currency1.toLowerCase()
-       let lowerCurr2 = currency2.toLowerCase()
-       let rate = data[lowerCurr1][lowerCurr2]
-       currencyInfo.textContent = `1 ${currency1} = ${rate} ${currency2}`
+       let rate = await getRate()
+       let value = parseFloat(rate.toFixed(2))
+       currencyInfo.textContent = `1 ${currency1} = ${value} ${currency2}`
     }
 }
 
@@ -61,9 +75,25 @@ const toDropdownHandler = (e) => {
 
 }
 
+//event handler for user input
+const inputHandler = (e) => {
+    //to get the user input 
+    currencyInput = Number(e.target.value)
+}
+
+//event handler for button
+const buttonHandler = async() => {
+    userInput.value = ""
+    let rate = await getRate()
+    let num = currencyInput * rate;
+    let value = parseFloat(num.toFixed(2))
+    currencyInfo.textContent = `${value} ${currency2}`
+}
 
 //adding event listeners to the dropdown
 fromDropdown.addEventListener('change', fromDropdownHandler)
 fromDropdown.addEventListener('change',messageBoard)
 toDropdown.addEventListener('change',toDropdownHandler)
 toDropdown.addEventListener('change',messageBoard)
+userInput.addEventListener("change",inputHandler)
+button.addEventListener('click',buttonHandler)
