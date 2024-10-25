@@ -8,6 +8,7 @@ let flag2img = document.querySelector(".flag2")
 let currencyInfo = document.querySelector(".currency-info")
 let userInput = document.querySelector(".user-input")
 let button = document.querySelector(".btn")
+let exchangeIcon = document.querySelector(".exchange-icon")
 
 //variables
 let currency1 = "USD"
@@ -90,6 +91,10 @@ const buttonHandler = async() => {
     currencyInfo.textContent = `${value} ${currency2}`
 }
 
+const exchangeHandler = () => {
+    console.log("clicked")
+}
+
 //adding event listeners to the dropdown
 fromDropdown.addEventListener('change', fromDropdownHandler)
 fromDropdown.addEventListener('change',messageBoard)
@@ -97,3 +102,4 @@ toDropdown.addEventListener('change',toDropdownHandler)
 toDropdown.addEventListener('change',messageBoard)
 userInput.addEventListener("change",inputHandler)
 button.addEventListener('click',buttonHandler)
+exchangeIcon.addEventListener('click',exchangeHandler)
