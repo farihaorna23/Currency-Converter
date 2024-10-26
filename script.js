@@ -16,14 +16,20 @@ let currency2  = "AED"
 let currencyInput = 0
 
 //creating the dropdown options for the From and To dropdown from countryList object
-for(let currency in countryList){
+for(let currency in countryList){  
+    if(currency != "USD"){
     let fromOption = document.createElement('option')
     fromOption.textContent = currency
+    fromOption.classList.add("country1")
     fromDropdown.append(fromOption)
-    
+   }
+
+   if(currency != "AED"){
     let toOption = document.createElement('option')
     toOption.textContent = currency
+    toOption.classList.add('country2')
     toDropdown.append(toOption)
+   }
 }
 
 //will fetch all the countries's currency and their rate with base being the currency that was passed
