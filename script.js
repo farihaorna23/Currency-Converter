@@ -2,15 +2,13 @@
 import {countryList1, countryList2} from "./countries.js";
 
 let fromDropdown = document.querySelector(".from-dropdown");
-let fromDropdownContainer = document.querySelector(".dropdown-container1");
 let toDropdown = document.querySelector(".to-dropdown");
-let toDropdownContainer = document.querySelector(".dropdown-container2");
 let flag1img = document.querySelector(".flag1")
 let flag2img = document.querySelector(".flag2")
 let currencyInfo = document.querySelector(".currency-info")
 let userInput = document.querySelector(".user-input")
 let button = document.querySelector(".btn")
-let exchangeIcon = document.querySelector(".exchange-icon")
+
 
 //variables
 let currency1 = "USD"
@@ -97,23 +95,6 @@ const buttonHandler = async() => {
     currencyInfo.textContent = `${value} ${currency2}`
 }
 
-//event handeler for the exchange icon
-const exchangeHandler = () => {
-    let country1Dropdown = document.querySelectorAll(".country1");
-    let country2Dropdown = document.querySelectorAll(".country2");
-
-    //get the current country's currency from two of the dropdown
-    // let country1 = country1Dropdown[0].textContent;
-    // let country2 = country2Dropdown[0].textContent;
-
-    // country1Dropdown[0].textContent = country2;
-    // country2Dropdown[0].textContent = country1;
-    fromDropdown.prepend(country2Dropdown[0])
-    toDropdown.prepend(country1Dropdown[0])
-    console.log(fromDropdown)
-    console.log(toDropdown)
-    //change the flag image and update message board here
-}
 
 //adding event listeners to the dropdown
 fromDropdown.addEventListener('change', fromDropdownHandler)
